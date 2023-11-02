@@ -11,7 +11,10 @@
     outline: none;
     font-size: x-large;
     transition: .5s ease;
-    padding-top: 15px;
+    padding-top: 25px;
+    margin: 20px;
+    font-family: monospace;
+    font-weight: 700;
 }
 
 .a:hover{
@@ -19,4 +22,13 @@
 }
 .cont{
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
