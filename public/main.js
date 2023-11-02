@@ -19,7 +19,7 @@ window.onscroll = () => {
     let id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
-      // active navbar links
+      // Активные ссылки
       navLinks.forEach((links) => {
         links.classList.remove("active");
         document
