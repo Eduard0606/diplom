@@ -40,8 +40,6 @@ window.onscroll = () => {
   // Удаление значка переключения и панель навигации при нажатии на ссылки панели навигации
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
-
-
 };
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
@@ -55,7 +53,25 @@ for (let smoothLink of smoothLinks) {
       block: "start",
     });
   });
-
-
-  
 }
+
+const boxes = Array.from(document.querySelectorAll(".box")); // считываем все элементы аккордеона в массив
+
+boxes.forEach((box) => {
+  box.addEventListener("click", boxHandler); // при нажатии на бокс вызываем ф-ию boxHanlder
+});
+
+function boxHandler(e) {
+  e.preventDefault(); // сбрасываем стандартное поведение
+  let currentBox = e.target.closest(".box"); // определяем текущий бокс
+  let currentContent = e.target.nextElementSibling; // находим скрытый контент
+  currentBox.classList.toggle("active"); // присваиваем ему активный класс
+  if (currentBox.classList.contains("active")) {
+    // если класс активный ..
+    currentContent.style.maxHeight = currentContent.scrollHeight + "px"; // открываем контент
+  } else {
+    // в противном случае
+    currentContent.style.maxHeight = 0; // скрываем контент
+  }
+}
+JavaScript
